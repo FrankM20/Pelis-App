@@ -1,0 +1,46 @@
+<section>
+    <div class="container">
+        <h3>{{ titulo }}</h3>
+        <hr>
+        <div class="row" *ngIf="peliculas">
+            <div class="col-md-6">
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1 puntero" (click)="enviarId(peliculas[0].id)" [ngStyle]="{'background-image': 'url(' + (peliculas[0].backdrop_path | imagenPelicula : peliculas[0].poster_path) + ')'}">
+                        <p class="pic-titulo">{{ peliculas[0].original_title }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 div-pic-2 puntero" (click)="enviarId(peliculas[1].id)" [ngStyle]="{'background-image': 'url(' + (peliculas[1].backdrop_path | imagenPelicula : peliculas[1].poster_path) + ')'}">
+                        <p class="pic-titulo">{{ peliculas[1].original_title }}</p>
+                    </div>
+                    <div class="col-md-6 div-pic-2 puntero" (click)="enviarId(peliculas[2].id)" [ngStyle]="{'background-image': 'url(' + (peliculas[2].backdrop_path | imagenPelicula : peliculas[2].poster_path) + ')'}">
+                        <p class="pic-titulo">{{ peliculas[2].original_title }}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 div-pic-2 puntero" (click)="enviarId(peliculas[3].id)" [ngStyle]="{'background-image': 'url(' + (peliculas[3].backdrop_path | imagenPelicula : peliculas[3].poster_path) + ')'}">
+                        <p class="pic-titulo">{{ peliculas[3].original_title }}</p>
+                    </div>
+                    <div class="col-md-6 div-pic-2 puntero" (click)="enviarId(peliculas[4].id)" [ngStyle]="{'background-image': 'url(' + (peliculas[4].backdrop_path | imagenPelicula : peliculas[4].poster_path) + ')'}">
+                        <p class="pic-titulo">{{ peliculas[4].original_title }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 div-pic-1 puntero" (click)="enviarId(peliculas[5].id)" [ngStyle]="{'background-image': 'url(' + (peliculas[5].backdrop_path | imagenPelicula : peliculas[5].poster_path) + ')'}">
+                        <p class="pic-titulo">{{ peliculas[5].original_title }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<br><br>

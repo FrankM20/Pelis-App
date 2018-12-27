@@ -1,0 +1,23 @@
+<div class="container main-container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Buscar:</label>
+                <input [(ngModel)]="buscar" name="buscar" class="form-control" placeholder="Buscar una pelicula" (keyup.enter)="buscarPelicula()">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-columns" *ngIf="service.peliculas">
+        <div class="card" *ngFor="let resultado of service.peliculas">
+            <img class="card-img-top" [src]="resultado.backdrop_path | imagenPelicula" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ resultado.title }}</h5>
+                <p class="card-text">{{ resultado.overview }}</p>
+                <button type="button" class="btn btn-outline-primary btn-block" (click)="enviarId(resultado.id)">Ver mas...</button>
+            </div>
+        </div>
+    </div>
+</div>

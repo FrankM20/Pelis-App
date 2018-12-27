@@ -1,0 +1,20 @@
+<div class="container main-container animated fadeIn fast" *ngIf="pelicula">
+    <h1>{{ pelicula.title }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12 div-pic-1-1" [ngStyle]="{'background-image': 'url(' + (pelicula.backdrop_path | imagenPelicula : pelicula.poster_path) + ')'}">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Sinopsis</h3>
+            <hr>
+            <p class="text-justify">{{ pelicula.overview }}</p>
+            <h4>Frase celebre</h4>
+            <p>{{ pelicula.tagline }}</p>
+            <p>Popularidad: <span class="badge badge-primary">{{ pelicula.popularity | number: ".0-0"}}</span></p>
+            <p>Voto promedio: <span class="badge badge-primary">{{ pelicula.vote_average }}</span></p>
+            <button class="btn btn-outline-danger" [routerLink]="[route,busqueda]">Regresar</button>
+        </div>
+    </div>
+</div>

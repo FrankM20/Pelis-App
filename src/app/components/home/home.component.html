@@ -1,0 +1,14 @@
+<header class="personalizado">
+    <div class="container">
+
+        <h1>Pelis App</h1>
+        <p>Esta es una aplicacion de peliculas</p>
+
+    </div>
+</header>
+
+<br><br>
+
+<app-peliculas [peliculas]="cartelera | slice:0:6" titulo="Peliculas en cartelera"></app-peliculas>
+<app-peliculas [peliculas]="populares | slice:0:6" titulo="Peliculas mas populares"></app-peliculas>
+<app-peliculas [peliculas]="infantiles | slice:0:6" titulo="Peliculas Infantiles"></app-peliculas>
